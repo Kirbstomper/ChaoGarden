@@ -24,6 +24,23 @@ public class Simple_Creature : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        // Scan for food
+        Food [] foodlist = FindObjectsOfType<Food>();
+        if(foodlist.Length > 0)
+        {
+            float speed = run_stat * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, foodlist[0].transform.position, speed);
+            if (transform.position == foodlist[0].transform.position) eat(foodlist[0]);
+        }
 	}
+
+    void eat(Food f)
+    {
+        pow_stat += f.pow;
+        run_stat += f.run;
+        fly_stat += f.fly;
+        swm_stat += f.swm;
+        sta_stat += f.sta;
+        DestroyObject(f.gameObject);
+    }
 }
