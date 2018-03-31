@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Food : MonoBehaviour {
+public class Food : Item {
     public int pow; //Power
     public int run; //RUn
     public int fly; // Fly
@@ -16,7 +16,11 @@ public class Food : MonoBehaviour {
         sta = 4;
         swm = 0;
         hungerVal = .6f;
-	}
+        //item_id = 0;
+
+        string json = JsonUtility.ToJson(this);
+        print(json);
+    }
 	
 	// Update is called once per frame
 	void Update () {

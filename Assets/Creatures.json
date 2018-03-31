@@ -1,0 +1,20 @@
+{"Creatures" :[
+    
+    
+    {
+        "id":0,
+        "species":"egg",
+        "evolution":[
+            {"id":1,"age":0.5,"pow":0,"run":0,"swm":0,"fly":0,"sta":0,"int":0,"luc":0 }
+        ]
+    },
+    {
+        "id":1,
+        "species":"slime",
+        "evolution":[
+            {}
+        ]
+    }
+    
+    
+    ]}

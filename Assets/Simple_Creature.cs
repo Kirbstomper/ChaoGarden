@@ -30,7 +30,7 @@ public class Simple_Creature : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Scan for food
-
+        
         if (hungedFilled < hungerMax)
         {
 
@@ -41,6 +41,7 @@ public class Simple_Creature : MonoBehaviour {
                 transform.position = Vector3.MoveTowards(transform.position, foodlist[0].transform.position, speed);
                 if (transform.position == foodlist[0].transform.position) eat(foodlist[0]);
             }
+
         }
 	}
 
@@ -54,4 +55,5 @@ public class Simple_Creature : MonoBehaviour {
         hungedFilled += f.hungerVal;
         DestroyObject(f.gameObject);
     }
+    
 }
