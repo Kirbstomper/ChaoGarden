@@ -13,7 +13,8 @@ public class Simple_Creature : MonoBehaviour {
     public int age; // Age of creature
     public float hungerMax;
     public float hungedFilled;
-	// Randomizes stats on creation of chao for variety/SOFT RESETS
+    public int species_id; // Species ID of the creature
+	// Randomizes stats on creation of egg for variety/SOFT RESETS
 	void Start () {
         pow_stat = Random.Range(1, 5);
         run_stat = Random.Range(1, 5);
@@ -25,6 +26,7 @@ public class Simple_Creature : MonoBehaviour {
         age = 0;
         hungedFilled = 0;
         hungerMax = 1f;
+        species_id = 0;
     }
 	
 	// Update is called once per frame
