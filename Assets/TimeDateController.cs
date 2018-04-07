@@ -18,9 +18,13 @@ public class TimeDateController : MonoBehaviour {
         }
     }
     private game_time currentTime = new game_time(-1, -1, -1);
+    private static int year = -1;
     private static int day = -1;
     private static int season = -1;
     private enum Seasons {SPRING, SUMMER,FALL, WINTER };
+
+
+    public GameObject man;
    
 	// Use this for initialization
 	void Start () {
@@ -33,6 +37,7 @@ public class TimeDateController : MonoBehaviour {
             day = 30;
         }
         if (currentTime.hour == -1) { currentTime = new game_time(23, 55, 0); }
+        if (year == -1) { year = 1; }
        
         
 	}
@@ -54,13 +59,14 @@ public class TimeDateController : MonoBehaviour {
         {
             currentTime.hour = 0;
             AddDay();
+            man.GetComponent<CreatureManager>().AgeCreatures();
         }
 	}
 
     //Updates the season to the proper next value;
     void ChangeSeason()
     {
-        if (season == 3) season = 0;
+        if (season == 3) { season = 0; year++; }
         else { season++; }
 
     }
@@ -95,8 +101,7 @@ public class TimeDateController : MonoBehaviour {
     //Returns the current season and day in a human readable format
     public string GetDateFormatted()
     {
-
-        return "Season: " + GetSeason() + " Day:" + day;
+        return "Season: " + GetSeason() + " Day:" + day + " Year:" + year;
     }
 
     public string GetTimeFormmated()

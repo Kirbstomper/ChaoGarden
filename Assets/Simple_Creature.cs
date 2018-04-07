@@ -14,6 +14,9 @@ public class Simple_Creature : MonoBehaviour {
     public float hungerMax;
     public float hungedFilled;
     public int species_id; // Species ID of the creature
+
+    public GameObject man;
+     
 	// Randomizes stats on creation of egg for variety/SOFT RESETS
 	void Start () {
         pow_stat = Random.Range(1, 5);
@@ -27,6 +30,8 @@ public class Simple_Creature : MonoBehaviour {
         hungedFilled = 0;
         hungerMax = 1f;
         species_id = 0;
+
+        man.GetComponent<CreatureManager>().AddCreature(this);
     }
 	
 	// Update is called once per frame
@@ -47,6 +52,11 @@ public class Simple_Creature : MonoBehaviour {
         }
 	}
 
+    //Method called when a creature ages, will be used for evolving creatures and hatching eggs.
+    public void AgeSelf()
+    {
+        age++;
+    }
     void eat(Food f)
     {
         pow_stat += f.pow;
