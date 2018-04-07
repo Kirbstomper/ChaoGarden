@@ -9,7 +9,9 @@ public class Creature : MonoBehaviour {
     {
         //gets the table
 
-        ArrayList Evolution evo = new ArrayList<Evolution>();
+        //ArrayList  evo = new ArrayList<Evolution>();
+
+      
 
 
         //if cannot evolve
