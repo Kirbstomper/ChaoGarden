@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+[System.Serializable]
 public class Simple_Creature : MonoBehaviour {
    // Stats copied from chao garden
     public int pow_stat; //Power

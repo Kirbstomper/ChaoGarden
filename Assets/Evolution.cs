@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Evolution : MonoBehaviour {
+public class Evolution {
     public int id; //Species ID;
     public int pow; //Power
     public int run; //RUn
