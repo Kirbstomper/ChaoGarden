@@ -5,18 +5,18 @@
         "id":0,
         "species":"egg",
         "evolution":[
-            {"id":1,"age":0.5,"pow":0,"run":0,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 }
+            {"id":1,"age":1,"pow":0,"run":0,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 }
         ]
     },
     {
         "id":1,
         "species":"slime",
         "evolution":[
-            {"id":2,"age":0.5,"pow":20,"run":0,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 },
-            {"id":3,"age":0.5,"pow":0,"run":20,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 },
-            {"id":4,"age":0.5,"pow":0,"run":0,"swm":20,"fly":0,"sta":0,"intel":0,"luc":0 },
-            {"id":5,"age":0.5,"pow":0,"run":0,"swm":0,"fly":20,"sta":0,"intel":0,"luc":0 },
-            {"id":6,"age":0.5,"pow":0,"run":0,"swm":0,"fly":0,"sta":20,"intel":0,"luc":0 }
+            {"id":2,"age":1,"pow":20,"run":0,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 },
+            {"id":3,"age":1,"pow":0,"run":20,"swm":0,"fly":0,"sta":0,"intel":0,"luc":0 },
+            {"id":4,"age":1,"pow":0,"run":0,"swm":20,"fly":0,"sta":0,"intel":0,"luc":0 },
+            {"id":5,"age":1,"pow":0,"run":0,"swm":0,"fly":20,"sta":0,"intel":0,"luc":0 },
+            {"id":6,"age":1,"pow":0,"run":0,"swm":0,"fly":0,"sta":20,"intel":0,"luc":0 }
             
         ]
     },

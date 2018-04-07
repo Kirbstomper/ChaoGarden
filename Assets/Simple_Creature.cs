@@ -56,6 +56,8 @@ public class Simple_Creature : MonoBehaviour {
     public void AgeSelf()
     {
         age++;
+        hungedFilled = 0;
+        Creature.CanEvolve(this);
     }
     void eat(Food f)
     {
