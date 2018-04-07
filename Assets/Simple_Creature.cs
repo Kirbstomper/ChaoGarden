@@ -10,12 +10,13 @@ public class Simple_Creature : MonoBehaviour {
     public int fly_stat; // Fly
     public int sta_stat; //Stamina
     public int swm_stat; // Swin
-    private int int_stat; // Intelligence: hidden from view
-    private int luc_stat; // luck: Hidden from view
+    public int int_stat; // Intelligence: hidden from view
+    public int luc_stat; // luck: Hidden from view
     public int age; // Age of creature
     public float hungerMax;
     public float hungedFilled;
     public int species_id; // Species ID of the creature
+    public string species;
 
     public GameObject man;
      
@@ -59,7 +60,7 @@ public class Simple_Creature : MonoBehaviour {
     {
         age++;
         hungedFilled = 0;
-        Creature.CanEvolve(this);
+        Creature.CheckEvolve(this);
     }
     void eat(Food f)
     {

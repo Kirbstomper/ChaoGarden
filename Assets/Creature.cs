@@ -19,7 +19,7 @@ public class Creature{
 
     /* This method will return the species ID of whatever the passed creature can evolve into*/
 
-    public static int CanEvolve(Simple_Creature c)
+    public static void CheckEvolve(Simple_Creature c)
     {
         
 
@@ -39,11 +39,18 @@ public class Creature{
 
         j = JsonHelper.FromJson<Creature>(file.text);
         Debug.Log(j[c.species_id].evolution.Length);
-    
+        Evolution[] possibles = j[c.species_id].evolution;
 
+        //Check through evolutions to see if it satisfys any
+        int toEvolve = Evolution.getEvolution(possibles, c);
 
-        //if cannot evolve
-        return -1;
+        //If evolution found
+        if (toEvolve != -1)
+        {
+            c.species_id = j[toEvolve].id;
+            c.species = j[toEvolve].species;
+        }
+        
 
     }
 }
