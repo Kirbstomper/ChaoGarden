@@ -31,7 +31,7 @@ public class Simple_Creature : MonoBehaviour {
         age = 0;
         hungedFilled = 0;
         hungerMax = 1f;
-        species_id = 0;
+        species_id = 1;
 
         man.GetComponent<CreatureManager>().AddCreature(this);
     }

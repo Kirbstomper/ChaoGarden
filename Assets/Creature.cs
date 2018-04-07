@@ -38,7 +38,7 @@ public class Creature{
        Debug.Log(jArray);
 
         j = JsonHelper.FromJson<Creature>(file.text);
-        Debug.Log(j[2].species);
+        Debug.Log(j[c.species_id].evolution.Length);
     
 
 
