@@ -4,7 +4,7 @@ using System.Collections;
 
 [System.Serializable]
 public class Simple_Creature : MonoBehaviour {
-   // Stats copied from chao garden
+    // Stats copied from chao garden
     public int pow_stat; //Power
     public int run_stat; //RUn
     public int fly_stat; // Fly
@@ -19,9 +19,9 @@ public class Simple_Creature : MonoBehaviour {
     public string species;
 
     public GameObject man;
-     
-	// Randomizes stats on creation of egg for variety/SOFT RESETS
-	void Start () {
+
+    // Randomizes stats on creation of egg for variety/SOFT RESETS
+    void Start() {
         pow_stat = Random.Range(1, 5);
         run_stat = Random.Range(1, 5);
         fly_stat = Random.Range(1, 5);
@@ -36,11 +36,11 @@ public class Simple_Creature : MonoBehaviour {
 
         man.GetComponent<CreatureManager>().AddCreature(this);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         // Scan for food
-        
+
         if (hungedFilled < hungerMax)
         {
 
@@ -53,7 +53,7 @@ public class Simple_Creature : MonoBehaviour {
             }
 
         }
-	}
+    }
 
     //Method called when a creature ages, will be used for evolving creatures and hatching eggs.
     public void AgeSelf()
@@ -71,6 +71,16 @@ public class Simple_Creature : MonoBehaviour {
         sta_stat += f.sta;
         hungedFilled += f.hungerVal;
         DestroyObject(f.gameObject);
+    }
+
+    public string getMonsterInfomationReadable()
+    {
+        return "Power: " + pow_stat +
+                " Run: " + run_stat +
+                " \n Fly: " + fly_stat +
+                " Swim: " + swm_stat +
+                " \n Stamina: " + sta_stat +
+                " Hunger Filled : " + hungedFilled;
     }
     
 }
