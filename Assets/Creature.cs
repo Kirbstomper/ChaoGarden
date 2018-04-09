@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
-using UnityEditor;
+
 
 [System.Serializable]
 public class Creature{
@@ -24,9 +24,9 @@ public class Creature{
         
 
         string path = "Assets/Resources/Creatures.json";
-        AssetDatabase.ImportAsset(path);
-        TextAsset file = (TextAsset)Resources.Load("Creatures");
-        Debug.Log(file.text);
+        string data = File.ReadAllText(path);
+      //  TextAsset file = (TextAsset)Resources.Load("Creatures");
+        Debug.Log(data);
         //gets the table
 
         Creature [] j = new Creature[3];
@@ -37,7 +37,7 @@ public class Creature{
         string jArray = JsonHelper.ToJson(j);
        Debug.Log(jArray);
 
-        j = JsonHelper.FromJson<Creature>(file.text);
+        j = JsonHelper.FromJson<Creature>(data);
         Debug.Log(j[c.species_id].evolution.Length);
         Evolution[] possibles = j[c.species_id].evolution;
 
