@@ -33,24 +33,24 @@ public class MenuScreenButton : MonoBehaviour {
      */
     public void ChangeColour(int c)
     {
-        active.active = false;
+        active.SetActive(false);
         int s = c;
         switch (s)
         {
             case 0:
                 sr.color = Color.blue;
                 active = screenArr[0];
-                active.active = true;
+                active.SetActive(true);
                 
                 break;
             case 1:
                 active = screenArr[1];
-                active.active = true;
+                active.SetActive(true);
                 sr.color = Color.yellow;
                 break;
             case 2:
                 active = screenArr[2];
-                active.active = true;
+                active.SetActive(true);
                 sr.color = Color.red;
                 break;
             default:

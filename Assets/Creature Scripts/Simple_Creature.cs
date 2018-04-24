@@ -17,6 +17,9 @@ public class Simple_Creature : MonoBehaviour {
     public float hungedFilled;
     public int species_id; // Species ID of the creature
     public string species;
+    private SpriteRenderer spriteR;
+    private Sprite[] sprites;
+    private Animator animator;
 
     public GameObject man;
 
@@ -33,6 +36,9 @@ public class Simple_Creature : MonoBehaviour {
         hungedFilled = 0;
         hungerMax = 1f;
         species_id = 1;
+        
+
+        animator = gameObject.GetComponent<Animator>();
 
         man.GetComponent<CreatureManager>().AddCreature(this);
     }
@@ -61,6 +67,8 @@ public class Simple_Creature : MonoBehaviour {
         age++;
         hungedFilled = 0;
         Creature.CheckEvolve(this);
+        
+        animator.SetInteger("species_id",species_id);
     }
     void eat(Food f)
     {

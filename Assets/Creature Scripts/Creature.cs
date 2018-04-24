@@ -9,6 +9,7 @@ public class Creature{
     public int id;
     public string species;
     public Evolution [] evolution;
+    
 
     public Creature(int i, string s)
     {
